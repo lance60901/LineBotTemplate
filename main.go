@@ -52,9 +52,8 @@ func callbackHandler(w http.ResponseWriter, r *http.Request) {
 				if _, err = bot.ReplyMessage(event.ReplyToken, linebot.NewTextMessage(message.Text)).Do(); err != nil {
 					log.Print(err)
 				}
-				if _, err = bot.ReplyMessage(event.ReplyToken, linebot.NewTextMessage("楊庭量好帥!")).Do(); err != nil {
-					log.Print(err)
-				}
+				bot.ReplyMessage(event.ReplyToken, linebot.NewTextMessage(message.Text)).Do();
+				
 			}
 		}
 	}

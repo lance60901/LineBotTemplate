@@ -49,7 +49,7 @@ func callbackHandler(w http.ResponseWriter, r *http.Request) {
 		if event.Type == linebot.EventTypeMessage {
 			switch message := event.Message.(type) {
 			case *linebot.TextMessage:
-				if message.Text != "楊庭量" && message.Text != "廖婉廷" {
+				if message.Text != "楊庭量" && message.Text != "廖婉廷" && message.Text != "古明萱" && message.Text != "哭米" {
 					if _, err = bot.ReplyMessage(event.ReplyToken, linebot.NewTextMessage(message.Text)).Do(); err != nil {
 						log.Print(err)
 					}
